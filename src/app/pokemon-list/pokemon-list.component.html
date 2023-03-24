@@ -5,8 +5,15 @@
 </ul>
  -->
 
- <ul>
+<!-- <ul>
     <li *ngFor="let p of pokemons">
         <a routerLink="/pokemons/{{p.id}}">{{p.name}}</a>
     </li>
- </ul>
+ </ul> -->
+
+<button type="button" mat-button (click)="getPokemons()">Ricarica</button>
+<div style="display: flex; flex-wrap: wrap; gap: 1em" *ngIf="!loading">
+  <app-pokemon-preview *ngFor="let p of pokemons" [pokemon]="p"></app-pokemon-preview>
+</div>
+<mat-progress-spinner class="example-margin" color="primary" mode="indeterminate" value="50" *ngIf="loading">
+</mat-progress-spinner>

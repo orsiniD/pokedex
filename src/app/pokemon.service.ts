@@ -15,6 +15,6 @@ export class PokemonService {
   }
 
   getById(id: string): Observable<PokemonDetailResponse> {
-    return this.http.get<PokemonDetailResponse>("https://api.pokemontcg.io/v2/cards" + id);
+    return this.http.get<PokemonDetailResponse>("https://api.pokemontcg.io/v2/cards/" + id);
   }
 }
